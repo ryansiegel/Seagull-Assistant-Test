@@ -6,7 +6,6 @@ import re
 from discord.utils import get
 import random
 from importlib import reload
-import commands as mod
 from dislash import *
 from enum import Enum
 
