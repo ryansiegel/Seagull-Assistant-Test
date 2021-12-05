@@ -1,4 +1,4 @@
-import discord,asyncio,os,speedtest,re
+import discord,asyncio,os,re
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
@@ -21,11 +21,7 @@ async def on_ready():
 @tasks.loop(seconds=3600) #repeats every 1 hour
 async def stayAlive():
     aliveChannel = bot.get_channel(910039460383698995)
-    speedChannel = bot.get_channel(915229249974181928)
-    wifi  = speedtest.Speedtest()
-    downloadSpeed = wifi.download()
-    uploadSpeed = wifi.upload()
     await aliveChannel.send('Bot is alive - ' + str(datetime.now())[:-10])
-    await speedChannel.send("Download Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(downloadSpeed * 0.000001)) + " Mbps*\nUpload Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(uploadSpeed * 0.000001)) + " Mbps*")
+    
 	
 bot.run(TOKEN, bot=True, reconnect=True)
