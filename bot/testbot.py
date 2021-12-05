@@ -20,7 +20,7 @@ async def on_ready():
 	
 @tasks.loop(seconds=3600) #repeats every 1 hour
 async def stayAlive():
-	aliveChannel, speedChannel = bot.get_channel(910039460383698995), bot.get_channel(915229249974181928)
+	aliveChannel, speedChannel = bot.get_channel(898150985397063700), bot.get_channel(915229249974181928)
 	wifi  = speedtest.Speedtest()
 	await aliveChannel.send('Bot is alive - ' + str(datetime.now())[:-10])
 	await speedChannel.send("Download Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(wifi.download() * 0.000001)) + " Mbps*\nUpload Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(wifi.upload() * 0.000001)) + " Mbps*")
