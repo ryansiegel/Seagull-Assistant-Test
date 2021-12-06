@@ -7,7 +7,8 @@ from dislash import *
 
 bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
-TOKEN, ALIVE = os.getenv("DISCORD_TOKEN"), bot.get_channel(os.getenv("ALIVE_CHANNEL"))
+TOKEN, ALIVE = os.getenv("DISCORD_TOKEN"), os.getenv("ALIVE_CHANNEL")
+speedChannel = bot.get_channel(ALIVE)
     
 
 @bot.event
