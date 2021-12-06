@@ -1,9 +1,10 @@
-import discord,asyncio,os,re,speedtest,commands as mod
+import discord,asyncio,os,re,speedtest,commands as mod,random,requests,string
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
 from importlib import reload
 from dislash import *
+from time import sleep
 
 bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
