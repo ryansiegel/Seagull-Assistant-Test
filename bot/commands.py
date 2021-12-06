@@ -1,3 +1,10 @@
+import discord,asyncio,os,re,speedtest,random,requests,string
+from datetime import datetime, timedelta, date
+from discord.ext import commands, tasks
+from urllib import parse, request
+from importlib import reload
+from time import sleep
+
 async def facts(inter, channelPrint, facts):
     if facts == "Seagull":
         fact1 = 'Seagulls are very clever. They learn, remember and even pass on behaviours, such as stamping their feet in a group to imitate rainfall and trick earthworms to come to the surface.'
