@@ -1,4 +1,4 @@
-aiohttp==
+aiohttp==4.0.0a0
 async-timeout==3.0.1
 attrs==21.2.0
 cachetools==4.2.2
