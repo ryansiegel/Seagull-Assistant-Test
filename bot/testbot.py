@@ -9,18 +9,18 @@ bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-time.sleep(30)
-ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
-
 @bot.event
 async def on_ready(): 
+	await asyncio.sleep(30)
+	ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
 	await ALIVE.send('Bot restarted - ' + str(datetime.now())[:-10])
-	await asyncio.sleep(10)
+	await asyncio.sleep(60)
 	if not stayAlive.is_running():
 		stayAlive.start()	
 
 @tasks.loop(seconds=3600) #repeats every 1 hour
 async def stayAlive():
+	ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
 	speedChannel = bot.get_channel(915229249974181928)
 	wifi  = speedtest.Speedtest()
 	await ALIVE.send('Test Bot is alive - ' + str(datetime.now())[:-10])
