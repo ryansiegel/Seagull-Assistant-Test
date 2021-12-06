@@ -5,7 +5,7 @@ from urllib import parse, request
 from importlib import reload
 from dislash import *
 
-TOKEN, ALIVE = os.getenv("DISCORD_TOKEN"), os.getenv("ALIVE_CHANNEL")
+TOKEN, ALIVE = os.getenv("DISCORD_TOKEN"), bot.get_channel(os.getenv("ALIVE_CHANNEL"))
 bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
     
