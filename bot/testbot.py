@@ -1,4 +1,4 @@
-import discord,asyncio,os,re,speedtest
+import discord,asyncio,os,re,speedtest,commands as mod
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
