@@ -10,17 +10,19 @@ inter_client = InteractionClient(bot)
 TOKEN = os.getenv("DISCORD_TOKEN")
 ALIVE = os.getenv("ALIVE_CHANNEL")
 print(ALIVE)
-test = bot.get_channel(ALIVE)
-print(test)
     
 
 @bot.event
 async def on_ready(): 
-	await ALIVE.send('Bot restarted - ' + str(datetime.now())[:-10])
+	test = bot.get_channel(os.getenv("ALIVE_CHANNEL"))
+	await test.send('Bot restarted - ' + str(datetime.now())[:-10])
 	await asyncio.sleep(60)
 	if not stayAlive.is_running():
 		stayAlive.start()
-	
+
+test = bot.get_channel(ALIVE)
+print(test)	
+
 @tasks.loop(seconds=3600) #repeats every 1 hour
 async def stayAlive():
 	speedChannel = bot.get_channel(915229249974181928)
