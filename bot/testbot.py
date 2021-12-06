@@ -8,12 +8,13 @@ from dislash import *
 bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
 TOKEN = os.getenv("DISCORD_TOKEN")
+global ALIVE
     
 
 @bot.event
 async def on_ready(): 
 	await asyncio.sleep(30)
-	global ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
+	ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
 	await ALIVE.send('Bot restarted - ' + str(datetime.now())[:-10])
 	await asyncio.sleep(30)
 	if not stayAlive.is_running():
