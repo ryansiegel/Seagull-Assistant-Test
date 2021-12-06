@@ -43,7 +43,7 @@ async def stayAlive(ALIVE):
 	]
 )
 async def facts(inter, facts):
-	ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
+	ALIVE = bot.get_channel(int(os.getenv("TEST_COMMANDS")))
 	reload(mod)
 	await mod.facts(inter, ALIVE, facts)
 
