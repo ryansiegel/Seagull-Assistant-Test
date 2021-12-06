@@ -15,10 +15,10 @@ async def on_ready():
 	await ALIVE.send('Bot restarted - ' + str(datetime.now())[:-10])
 	await asyncio.sleep(60)
 	if not stayAlive.is_running():
-		stayAlive.start(ALIVE)
+		stayAlive.start()
 	
 @tasks.loop(seconds=3600) #repeats every 1 hour
-async def stayAlive(ALIVE):
+async def stayAlive():
 	speedChannel = bot.get_channel(915229249974181928)
 	wifi  = speedtest.Speedtest()
 	await ALIVE.send('Test Bot is alive - ' + str(datetime.now())[:-10])
