@@ -16,12 +16,6 @@ dislash.py==1.4.9
 enum34==1.1.10
 Flask==2.0.2
 forever==0.8.26
-google-api-core==2.0.1
-google-api-python-client==2.20.0
-google-auth==2.0.2
-google-auth-httplib2==0.1.0
-google-auth-oauthlib==0.4.6
-googleapis-common-protos==1.53.0
 greenlet==1.1.1
 gsheet==0.0.1
 httplib2==0.19.1
