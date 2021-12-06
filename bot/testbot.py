@@ -9,7 +9,9 @@ bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
 TOKEN = os.getenv("DISCORD_TOKEN")
 ALIVE = os.getenv("ALIVE_CHANNEL")
-ALIVE = bot.get_channel(int(ALIVE))
+print(ALIVE)
+test = bot.get_channel(ALIVE)
+print(test)
     
 
 @bot.event
