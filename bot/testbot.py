@@ -24,5 +24,26 @@ async def stayAlive(ALIVE):
 	await ALIVE.send('Test Bot is alive - ' + str(datetime.now())[:-10])
 	await SPEED.send("Heroku Download Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(wifi.download() * 0.000001)) + " Mbps*\nHeroku Upload Speed at " + str(datetime.now())[:-10] + " is: *" + str('{0:.2f}'.format(wifi.upload() * 0.000001)) + " Mbps*")
     
-	
+
+#facts command
+@inter_client.slash_command(
+	description="Generate a random fact!",
+	options=[
+		Option(
+			"facts",
+			description="Generate a random fact!",
+			type=OptionType.STRING,
+			required=True,
+			choices=[
+				OptionChoice("bidoof", "Bidoof"),
+				OptionChoice("seagull", "Seagull"),
+			],
+		)
+	]
+)
+async def facts(inter, facts):
+	ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
+	reload(mod)
+	await mod.facts(inter, ALIVE, facts)
+
 bot.run(os.getenv("DISCORD_TOKEN"), bot=True, reconnect=True)
