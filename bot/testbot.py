@@ -26,7 +26,7 @@ async def stayAlive(ALIVE):
 @inter_client.slash_command(
 	description="Generate a random fact!",
 	options=[Option("facts",description="Generate a random fact!",type=OptionType.STRING,required=True,
-			choices=[OptionChoice("bidoof", "Bidoof"), OptionChoice("seagull", "Seagull")]])
+			choices=[OptionChoice("bidoof", "Bidoof"), OptionChoice("seagull", "Seagull")])])
 async def facts(inter, facts):
 	ALIVE = bot.get_channel(int(os.getenv("TEST_COMMANDS")))
 	reload(mod) #reload commands.py
