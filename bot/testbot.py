@@ -1,4 +1,4 @@
-import discord,asyncio,os,re,speedtest
+import discord,asyncio,os,re,speedtest,time
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
 inter_client = InteractionClient(bot)
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-await asyncio.sleep(30)
+time.sleep(30)
 ALIVE = bot.get_channel(int(os.getenv("ALIVE_CHANNEL")))
 
 @bot.event
