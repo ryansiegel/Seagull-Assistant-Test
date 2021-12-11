@@ -34,9 +34,9 @@ async def facts(inter, facts):
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>pvpoke command
 @inter_client.slash_command(name="pvpoke", description=".")
-async def tournyitems(inter): 
+async def pvpoke(inter): 
     pass
-@tournyitems.sub_command(name="rank-list", description=".", options=[Option("meta", ".", OptionType.STRING, required=True, choices=[OptionChoice("great", "Great"), OptionChoice("glacial", "Glacial")]), Option("ranks", ".", OptionType.STRING, required=True, choices=[OptionChoice("1to10", "1to10"), OptionChoice("11to20", "11to20")])])
+@pvpoke.sub_command(name="rank-list", description=".", options=[Option("meta", ".", OptionType.STRING, required=True, choices=[OptionChoice("great", "Great"), OptionChoice("glacial", "Glacial")]), Option("ranks", ".", OptionType.STRING, required=True, choices=[OptionChoice("1to10", "1to10"), OptionChoice("11to20", "11to20")])])
 async def rankList(inter, meta, ranks):
 	ALIVE = bot.get_channel(int(os.getenv("TEST_COMMANDS")))
 	reload(mod) #reload commands.py
