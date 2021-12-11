@@ -39,10 +39,10 @@ async def facts(inter, channelPrint, facts):
 async def rankList(inter, channelPrint, meta, ranks):
     count, counting, fastmove = 1,0,None
     matchoppt, matchrate, countoppt, countrate, chargemove = []
-    if meta == "great"
+    if meta == "Great"
         meta = "Great League"
         parser = ijson.parse(open("rankings-1500.json"))
-    embedVar = discord.Embed(title="PvPoke | " + meta, description=randomFact, color=0x000000)
+    embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 - 10", description="", color=0x000000)
     for prefix, event, value in parser:
         if count <= 10:
             if prefix.endswith('.speciesName'):
