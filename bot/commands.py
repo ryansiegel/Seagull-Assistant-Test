@@ -37,39 +37,42 @@ async def facts(inter, channelPrint, facts):
         await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
 
 async def rankList(inter, channelPrint, meta, ranks):
-count, counting, fastmove = 1,0,None
-matchoppt, matchrate, countoppt, countrate, chargemove = []
-parser = ijson.parse(open("rankings-1500.json"))
-for prefix, event, value in parser and count <=10:
-    if count <= 10:
-        if prefix.endswith('.speciesName'):
-            pokemon = str(value).upper()
-        elif prefix.endswith('.matchups.item.opponent'):
-            matchoppt.append(str(value).title().replace("_"," "))
-        elif prefix.endswith('.matchups.item.rating'):
-            matchrate.append(str(value))
-        elif prefix.endswith('.counters.item.opponent'):
-            countoppt.append(str(value).title().replace("_"," "))
-        elif prefix.endswith('.counters.item.rating'):
-            countrate.append(str(value))
-        elif prefix.endswith('item.moveset.item'):
-            if counting == 0:
-                fastmove = str(value).title().replace("_"," ")
-                counting += 1
-            elif counting == 1 or counting == 2:
-                chargemove.append(str(value).title().replace("_"," "))
-                counting += 1
-        elif prefix == 'item':
-            if event == 'end_map':
-                print("#" + str(count) + ": " + pokemon)
-                print("Suggested Moveset- " + fastmove + " | " + chargemove[0] + " & " + chargemove[1])
-                print("\tKey Wins>>\t" + matchoppt[0] + "(RATING: " + matchrate[0] + "), " + matchoppt[1] + "(RATING: " + matchrate[1] + "), " + matchoppt[2] + "(RATING: " + matchrate[2] + "), " + matchoppt[3] + "(RATING: " + matchrate[3] +  "), " + matchoppt[4] + "(RATING: " + matchrate[4] + ")")
-                print("\tKey Losses>>\t" + countoppt[0] + "(RATING: " + countrate[0] + "), " + countoppt[1] + "(RATING: " + countrate[1] + "), " + countoppt[2] + "(RATING: " + countrate[2] + "), " + countoppt[3] + "(RATING: " + countrate[3] +  "), " + countoppt[4] + "(RATING: " + countrate[4] + ")")
-                matchoppt.clear()
-                matchrate.clear()
-                countoppt.clear()
-                countrate.clear()
-                fastmove = None
-                count += 1
-                counting = 0
-                chargemove.clear()
+    count, counting, fastmove = 1,0,None
+    matchoppt, matchrate, countoppt, countrate, chargemove = []
+    if meta == "great"
+        meta = "Great League"
+        parser = ijson.parse(open("rankings-1500.json"))
+    embedVar = discord.Embed(title="PvPoke | " + meta, description=randomFact, color=0x000000)
+    for prefix, event, value in parser:
+        if count <= 10:
+            if prefix.endswith('.speciesName'):
+                pokemon = str(value).upper()
+            elif prefix.endswith('.matchups.item.opponent'):
+                matchoppt.append(str(value).title().replace("_"," "))
+            elif prefix.endswith('.matchups.item.rating'):
+                matchrate.append(str(value))
+            elif prefix.endswith('.counters.item.opponent'):
+                countoppt.append(str(value).title().replace("_"," "))
+            elif prefix.endswith('.counters.item.rating'):
+                countrate.append(str(value))
+            elif prefix.endswith('item.moveset.item'):
+                if counting == 0:
+                    fastmove = str(value).title().replace("_"," ")
+                    counting += 1
+                elif counting == 1 or counting == 2:
+                    chargemove.append(str(value).title().replace("_"," "))
+                    counting += 1
+            elif prefix == 'item':
+                if event == 'end_map':
+                    embedVar.addfield(name="#" + str(count) + ": " + pokemon,value="Suggested Moveset- " + fastmove + " | " + chargemove[0] + " & " + chargemove[1]) + "\n\tKey Wins>>\t" + matchoppt[0] + "(RATING: " + matchrate[0] + "), " + matchoppt[1] + "(RATING: " + matchrate[1] + "), " + matchoppt[2] + "(RATING: " + matchrate[2] + "), " + matchoppt[3] + "(RATING: " + matchrate[3] +  "), " + matchoppt[4] + "(RATING: " + matchrate[4] + ")\n\tKey Losses>>\t" + countoppt[0] + "(RATING: " + countrate[0] + "), " + countoppt[1] + "(RATING: " + countrate[1] + "), " + countoppt[2] + "(RATING: " + countrate[2] + "), " + countoppt[3] + "(RATING: " + countrate[3] +  "), " + countoppt[4] + "(RATING: " + countrate[4] + ")", inline=False)
+                    matchoppt.clear()
+                    matchrate.clear()
+                    countoppt.clear()
+                    countrate.clear()
+                    fastmove = None
+                    count += 1
+                    counting = 0
+                    chargemove.clear()
+    embedVar.set_footer(text="www.seagullsbot.com")
+    await inter.reply(embed=embedVar)
+    await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
