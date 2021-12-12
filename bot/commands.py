@@ -37,7 +37,7 @@ async def facts(inter, channelPrint, facts):
         await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
 
 async def rankList(inter, channelPrint, meta, ranks):
-    count, count1, count2, fastmove, XL, minRank, maxRank = 1,0,0,None,False,1,5
+    count, count1, count2, fastmove, XL, minRank, maxRank= 1,0,0,None,False,1,5
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
     if meta == "Great":
         meta = "Great League"
@@ -47,12 +47,9 @@ async def rankList(inter, channelPrint, meta, ranks):
         meta = "Glacial Cup"
         parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
         parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
-    if ranks == "6to10":
-        minRank += 5
-        maxRank += 5
-    embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 to 5", description="", color=0x000000)
+    embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks " + str(ranks-5) + " to " + str(ranks)", description="", color=0x000000)
     for prefix, event, value in parser:
-        if minRank <= count and count <= maxRank:
+        if (ranks-5) <= count and count <= ranks:
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
                 for prefix1, event1, value1 in parser1:
