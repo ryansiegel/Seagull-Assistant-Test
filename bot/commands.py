@@ -1,4 +1,4 @@
-import discord,asyncio,os,re,speedtest,random,requests,string,ijson
+import discord,asyncio,os,re,speedtest,random,requests,string,ijson,os.path
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
