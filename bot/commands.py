@@ -48,7 +48,7 @@ async def rankList(inter, channelPrint, meta, ranks):
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
                 parser1 = ijson.parse(open("bot/all-rankings-1500.json"))
-                for prefix1, event1, value1 in parser:
+                for prefix1, event1, value1 in parser1:
                     if count < count1:
                         if prefix.endswith('.speciesName'):
                             if value == value1:
