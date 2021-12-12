@@ -98,7 +98,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon,value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
-                    embedVar.add_field(name="Key Wins>>",value=matchoppt[0] + " [RATING: " + matchrate[0] + "]\n" + matchoppt[1] + " [RATING: " + matchrate[1] + "]\n" + matchoppt[2] + " [RATING: " + matchrate[2] + "]\n" + matchoppt[3] + " [RATING: " + matchrate[3] +  "]\n" + matchoppt[4] + "[RATING: " + matchrate[4] + "]", inline=True)
+                    embedVar.add_field(name="Key Wins>>",value=matchoppt[0] + " [RATING: " + matchrate[0] + "]\n" + matchoppt[1] + " [RATING: " + matchrate[1] + "]\n" + matchoppt[2] + " [RATING: " + matchrate[2] + "]\n" + matchoppt[3] + " [RATING: " + matchrate[3] +  "]\n" + matchoppt[4] + " [RATING: " + matchrate[4] + "]", inline=True)
                     embedVar.add_field(name="Key Losses>>",value=countoppt[0] + " [RATING: " + countrate[0] + "]\n" + countoppt[1] + " [RATING: " + countrate[1] + "]\n" + countoppt[2] + " [RATING: " + countrate[2] + "]\n" + countoppt[3] + " [RATING: " + countrate[3] +  "]\n" + countoppt[4] + " [RATING: " + countrate[4] + "]", inline=True)
                     matchoppt.clear()
                     matchrate.clear()
@@ -110,7 +110,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         if prefix == 'item':
             if event == 'end_map':
                 count += 1
-    embedVar.set_footer(text="www.seagullsbot.com")
+    embedVar.set_footer(text="All data has been provided from www.pvpoke.com | www.seagullsbot.com",icon_url = "https://pbs.twimg.com/profile_images/1085243290671304704/3XyaT2qY_400x400.png")
     embedVar.set_thumbnail(url=thumb)
     await inter.reply(embed=embedVar)
     await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
