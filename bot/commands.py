@@ -46,13 +46,13 @@ async def rankList(inter, channelPrint, meta, ranks):
     for prefix, event, value in parser:
         if count <= 10:
             if prefix.endswith('.speciesName'):
-                pokemon = str(value).upper()
+                pokemon = str(value).upper().replace(" Shadow"," (Shadow)")
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," "))
             elif prefix.endswith('.matchups.item.rating'):
                 matchrate.append(str(value))
             elif prefix.endswith('.counters.item.opponent'):
-                countoppt.append(str(value).title().replace("_"," "))
+                countoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)"))
             elif prefix.endswith('.counters.item.rating'):
                 countrate.append(str(value))
             elif prefix.endswith('item.moveset.item'):
@@ -60,7 +60,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                     fastmove = str(value).title().replace("_"," ")
                     counting += 1
                 elif counting == 1 or counting == 2:
-                    chargemove.append(str(value).title().replace("_"," "))
+                    chargemove.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)"))
                     counting += 1
             elif prefix == 'item':
                 if event == 'end_map':
