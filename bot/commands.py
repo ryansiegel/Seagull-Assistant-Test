@@ -44,7 +44,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         parser = ijson.parse(open("bot/all-rankings-1500.json"))
     embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 - 10", description="", color=0x000000)
     for prefix, event, value in parser:
-        if count <= 10:
+        if count <= 1:
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
             elif prefix.endswith('.matchups.item.opponent'):
