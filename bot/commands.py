@@ -47,7 +47,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         meta = "Glacial Cup"
         parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
         parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
-    embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks " + str(ranks-5) + " to " + str(ranks), description="", color=0x000000)
+    embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-5) <= count and count <= ranks:
             if prefix.endswith('.speciesName'):
@@ -95,4 +95,4 @@ async def rankList(inter, channelPrint, meta, ranks):
                 count += 1
     embedVar.set_footer(text="www.seagullsbot.com")
     await inter.reply(embed=embedVar)
-    await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
+    await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
