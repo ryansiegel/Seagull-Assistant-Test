@@ -41,7 +41,7 @@ async def rankList(inter, channelPrint, meta, ranks):
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
     if meta == "Great":
         meta = "Great League"
-        parser = ijson.parse(open("/pvpoke/all/rankings-1500"))
+        parser = ijson.parse(open("\pvpoke\all\rankings-1500.JSON"))
     embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 - 10", description="", color=0x000000)
     for prefix, event, value in parser:
         if count <= 10:
