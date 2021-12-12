@@ -46,7 +46,7 @@ async def rankList(inter, channelPrint, meta, ranks):
     for prefix, event, value in parser:
         if count <= 10:
             if prefix.endswith('.speciesName'):
-                pokemon = str(value).upper().replace(" Shadow"," (Shadow)")
+                pokemon = str(value).upper()
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," "))
             elif prefix.endswith('.matchups.item.rating'):
