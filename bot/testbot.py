@@ -40,7 +40,7 @@ async def pvpoke(inter):
 async def rankList(inter, meta, ranks):
 	ALIVE = bot.get_channel(int(os.getenv("TEST_COMMANDS")))
 	reload(mod) #reload commands.py
-	await mod.checkin(inter, ALIVE, meta, ranks)
+	await mod.rankList(inter, ALIVE, meta, ranks)
 
 
 bot.run(os.getenv("DISCORD_TOKEN"), bot=True, reconnect=True)
