@@ -47,7 +47,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         meta = "Glacial Cup"
         parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
         parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
-    if ranks == "6to10:
+    if ranks == "6to10":
         minRank += 5
         maxRank += 5
     embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 to 5", description="", color=0x000000)
