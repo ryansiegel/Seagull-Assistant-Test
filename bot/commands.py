@@ -64,7 +64,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                     counting += 1
             elif prefix == 'item':
                 if event == 'end_map':
-                    embedVar.add_field(name="#" + str(count) + ": " + pokemon,value="Suggested Moveset- " + fastmove + " | " + chargemove[0] + " & " + chargemove[1]), inline=False)
+                    embedVar.add_field(name="#" + str(count) + ": " + pokemon,value="Suggested Moveset- " + fastmove, inline=False)
                     matchoppt.clear()
                     matchrate.clear()
                     countoppt.clear()
