@@ -46,7 +46,7 @@ async def rankList(inter, channelPrint, meta, ranks):
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
         parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
-    embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="NOTE: If a Pokemon ", color=0x000000)
+    embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-4) <= count and count <= ranks:
             if prefix.endswith('.speciesName'):
