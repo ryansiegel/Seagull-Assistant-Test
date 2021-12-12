@@ -37,7 +37,7 @@ async def facts(inter, channelPrint, facts):
         await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
 
 async def rankList(inter, channelPrint, meta, ranks):
-    count, count1, count2, fastmove, XL, minRank, maxRank= 1,0,0,None,False,1,5
+    count, count1, count2, fastmove, XL, minRank, maxRank= 1,1,0,None,False,1,5
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
     if meta == "Great":
         meta = "Great League"
@@ -56,6 +56,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                     if count < count1:
                         if prefix1.endswith('.speciesName'):
                             if value == value1:
+                                print(value1)
                                 XL = True
                     if prefix1 == 'item':
                         if event1 == 'end_map':    
