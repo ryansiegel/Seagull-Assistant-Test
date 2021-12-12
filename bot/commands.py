@@ -39,15 +39,21 @@ async def facts(inter, channelPrint, facts):
 async def rankList(inter, channelPrint, meta, ranks):
     count, count1, count2, fastmove, XL, minRank, maxRank= 1,1,0,None,False,1,5
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
-    listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Sableye (Shadow)", "Spritzee", "Grimer (Alolan)"]
     if meta == "Great":
         meta1 = "Great League"
-        parser = ijson.parse(open("bot/pvpoke/all-rankings-1500.json"))
+        parser = ijson.parse(open("bot/pvpoke/gl-rankings-1500.json"))
         thumb = "https://silph.gg/img/badges/great-league.png"
+        listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Sableye (Shadow)", "Spritzee", "Grimer (Alolan)"]
+    elif meta == "Remix Great"
+        meta1 = "Great League Remix"
+        parser = ijson.parse(open("bot/pvpoke/glremix-rankings-1500.json"))
+        thumb = "https://silph.gg/img/badges/great-league.png"
+        listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Grimer (Alolan)", "Wormadam (Trash)", "Chansey", "Sandshrew (Alolan)"]
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
         parser = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
         thumb = "https://assets.sil.ph/silph-arena/assets/2021-12-01-glacial-cup/glacial-cup-badge.png"
+        listXL = ["Grimer (Alolan)", "Poliwhirl"]
     embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-4) <= count and count <= ranks:
@@ -58,7 +64,9 @@ async def rankList(inter, channelPrint, meta, ranks):
                         XL = True
                 if XL == False:
                     if meta == "Great":
-                        parser1 = ijson.parse(open("bot/pvpoke/all-rankings-1500.json"))
+                        parser1 = ijson.parse(open("bot/pvpoke/gl-rankings-1500.json"))
+                    elif meta == "Remix Great":
+                        parser1 = ijson.parse(open("bot/pvpoke/glremix-rankings-1500.json"))
                     elif meta == "Glacial":
                         parser1 = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
                     for prefix1, event1, value1 in parser1:
