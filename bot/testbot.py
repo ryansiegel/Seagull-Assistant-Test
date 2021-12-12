@@ -1,4 +1,4 @@
-import discord,asyncio,os,re,commands as mod,random,requests,string,ijson
+import discord,asyncio,os.path,re,commands as mod,random,requests,string,ijson
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from urllib import parse, request
