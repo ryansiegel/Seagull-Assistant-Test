@@ -53,7 +53,7 @@ async def rankList(inter, channelPrint, meta, ranks):
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
                 for prefix1, event1, value1 in parser1:
-                    if count < count1:
+                    if ranks < count1:
                         if prefix.endswith('.speciesName'):
                             if value == value1:
                                 XL = True
