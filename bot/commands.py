@@ -54,7 +54,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                 for poke in listXL:
                     if poke == value:
                         XL = True
-                if XL = False:
+                if XL == False:
                     if meta == "Great":
                         parser1 = ijson.parse(open("bot/all-rankings-1500.json"))
                     elif meta == "Glacial":
