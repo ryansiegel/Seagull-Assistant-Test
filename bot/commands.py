@@ -44,7 +44,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         parser = ijson.parse(open("bot/pvpoke/gl-rankings-1500.json"))
         thumb = "https://silph.gg/img/badges/great-league.png"
         listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Sableye (Shadow)", "Spritzee", "Grimer (Alolan)"]
-    elif meta == "Remix Great"
+    elif meta == "Remix Great":
         meta1 = "Great League Remix"
         parser = ijson.parse(open("bot/pvpoke/glremix-rankings-1500.json"))
         thumb = "https://silph.gg/img/badges/great-league.png"
