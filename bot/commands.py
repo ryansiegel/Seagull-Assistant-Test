@@ -102,7 +102,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         if prefix == 'item':
             if event == 'end_map':
                 count += 1
-    embed.set_thumbnail(url=thumb)
+    embedVar.set_thumbnail(url=thumb)
     embedVar.set_footer(text="www.seagullsbot.com")
     await inter.reply(embed=embedVar)
     await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
