@@ -39,29 +39,34 @@ async def facts(inter, channelPrint, facts):
 async def rankList(inter, channelPrint, meta, ranks):
     count, count1, count2, fastmove, XL, minRank, maxRank= 1,1,0,None,False,1,5
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
+    listXL = [Diggersby, Lickitung, Pachirisu, Wobbuffet, Sableye (Shadow), Spritzee, Grimer (Alolan)]
     if meta == "Great":
         meta1 = "Great League"
         parser = ijson.parse(open("bot/all-rankings-1500.json"))
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
         parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
-    embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
+    embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="NOTE: If a Pokemon ", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-4) <= count and count <= ranks:
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
-                if meta == "Great":
-                    parser1 = ijson.parse(open("bot/all-rankings-1500.json"))
-                elif meta == "Glacial":
-                    parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
-                for prefix1, event1, value1 in parser1:
-                    if count < count1:
-                        if prefix1.endswith('.speciesName'):
-                            if value == value1:
-                                XL = True
-                    if prefix1 == 'item':
-                        if event1 == 'end_map':    
-                            count1 += 1
+                for poke in listXL:
+                    if poke == value:
+                        XL = True
+                if XL = False:
+                    if meta == "Great":
+                        parser1 = ijson.parse(open("bot/all-rankings-1500.json"))
+                    elif meta == "Glacial":
+                        parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
+                    for prefix1, event1, value1 in parser1:
+                        if count < count1:
+                            if prefix1.endswith('.speciesName'):
+                                if value == value1:
+                                    XL = True
+                        if prefix1 == 'item':
+                            if event1 == 'end_map':    
+                                count1 += 1
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," "))
             elif prefix.endswith('.matchups.item.rating'):
