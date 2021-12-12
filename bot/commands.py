@@ -39,7 +39,7 @@ async def facts(inter, channelPrint, facts):
 async def rankList(inter, channelPrint, meta, ranks):
     count, count1, count2, fastmove, XL, minRank, maxRank= 1,1,0,None,False,1,5
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
-    listXL = [Diggersby, Lickitung, Pachirisu, Wobbuffet, Sableye (Shadow), Spritzee, Grimer (Alolan)]
+    listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Sableye (Shadow)", "Spritzee", "Grimer (Alolan)"]
     if meta == "Great":
         meta1 = "Great League"
         parser = ijson.parse(open("bot/all-rankings-1500.json"))
