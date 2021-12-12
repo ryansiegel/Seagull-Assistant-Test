@@ -41,7 +41,7 @@ async def rankList(inter, channelPrint, meta, ranks):
     matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
     if meta == "Great":
         meta = "Great League"
-        parser = ijson.parse(open(os.path.abspath("all-rankings-1500.json"))
+        parser = ijson.parse(open("Seagull-Assistant-Test/bot/all-rankings-1500.json")
     embedVar = discord.Embed(title="Bidoof Facts!", description="", color=0x000000)
     for prefix, event, value in parser:
         if count <= 10:
