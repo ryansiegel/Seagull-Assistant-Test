@@ -22,7 +22,7 @@ async def on_ready():
 async def stayAlive(ALIVE):
 	await ALIVE.send('Test Bot is alive - ' + str(datetime.now())[:-10]) #alert that bot is still alive
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>facts command
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>facts command
 @inter_client.slash_command(
 	description="Generate a random fact!",
 	options=[Option("facts",description="Generate a random fact!",type=OptionType.STRING,required=True,
