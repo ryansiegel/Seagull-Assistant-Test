@@ -91,9 +91,9 @@ async def rankList(inter, channelPrint, meta, ranks):
                     countoppt.clear()
                     countrate.clear()
                     chargemove.clear()
-                    count += 1
                     fastmove, XL = None,False
                     count1, count2 = 0,0
+        count += 1
     embedVar.set_footer(text="www.seagullsbot.com")
     await inter.reply(embed=embedVar)
     await channelPrint.send('Bidoof Facts - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
