@@ -43,11 +43,11 @@ async def rankList(inter, channelPrint, meta, ranks):
     if meta == "Great":
         meta1 = "Great League"
         parser = ijson.parse(open("bot/pvpoke/all-rankings-1500.json"))
-        thumb = "bot/pvpoke/images/great-league.png"
+        thumb = "https://silph.gg/img/badges/great-league.png"
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
         parser = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
-        thumb = "bot/pvpoke/images/glacial-cup.png"
+        thumb = "https://assets.sil.ph/silph-arena/assets/2021-12-01-glacial-cup/glacial-cup-badge.png"
     embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-4) <= count and count <= ranks:
@@ -102,7 +102,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         if prefix == 'item':
             if event == 'end_map':
                 count += 1
-    embedVar.set_thumbnail(url=thumb)
     embedVar.set_footer(text="www.seagullsbot.com")
+    embedVar.set_thumbnail(url=thumb)
     await inter.reply(embed=embedVar)
     await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
