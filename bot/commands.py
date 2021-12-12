@@ -38,7 +38,7 @@ async def facts(inter, channelPrint, facts):
 
 async def rankList(inter, channelPrint, meta, ranks):
     count, counting, fastmove = 1,0,None
-    matchoppt, matchrate, countoppt, countrate, chargemove = []
+    matchoppt, matchrate, countoppt, countrate, chargemove = [], [], [], [], []
     if meta == "Great":
         meta = "Great League"
         parser = ijson.parse(open("/pvpoke/all/rankings-1500.json"))
