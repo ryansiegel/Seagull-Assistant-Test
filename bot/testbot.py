@@ -7,7 +7,7 @@ from dislash import *
 from time import sleep
 
 bot = commands.Bot(command_prefix='!', description="This is a Helper Bot")
-inter_client = InteractionClient(bot)
+inter_client = InteractionClient(bot, test_guilds=[869586825025552424])
 
 @bot.event
 async def on_ready(): 
