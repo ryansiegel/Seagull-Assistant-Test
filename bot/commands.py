@@ -42,10 +42,12 @@ async def rankList(inter, channelPrint, meta, ranks):
     listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Sableye (Shadow)", "Spritzee", "Grimer (Alolan)"]
     if meta == "Great":
         meta1 = "Great League"
-        parser = ijson.parse(open("bot/all-rankings-1500.json"))
+        parser = ijson.parse(open("bot/pvpoke/all-rankings-1500.json"))
+        thumb = "bot/pvpoke/images/great-league.png"
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
-        parser = ijson.parse(open("bot/glacial-rankings-1500.json"))
+        parser = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
+        thumb = "bot/pvpoke/images/glacial-cup.png"
     embedVar = discord.Embed(title="PvPoke | " + meta1 + " - Ranks " + str(ranks-4) + " to " + str(ranks), description="", color=0x000000)
     for prefix, event, value in parser:
         if (ranks-4) <= count and count <= ranks:
@@ -56,9 +58,9 @@ async def rankList(inter, channelPrint, meta, ranks):
                         XL = True
                 if XL == False:
                     if meta == "Great":
-                        parser1 = ijson.parse(open("bot/all-rankings-1500.json"))
+                        parser1 = ijson.parse(open("bot/pvpoke/all-rankings-1500.json"))
                     elif meta == "Glacial":
-                        parser1 = ijson.parse(open("bot/glacial-rankings-1500.json"))
+                        parser1 = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
                     for prefix1, event1, value1 in parser1:
                         if count < count1:
                             if prefix1.endswith('.speciesName'):
@@ -100,6 +102,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         if prefix == 'item':
             if event == 'end_map':
                 count += 1
+    embed.set_thumbnail(url=thumb)
     embedVar.set_footer(text="www.seagullsbot.com")
     await inter.reply(embed=embedVar)
     await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
