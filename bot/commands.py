@@ -55,6 +55,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                 for prefix1, event1, value1 in parser1:
                     if count < count1:
                         if prefix1.endswith('.speciesName'):
+                            print(value)
                             if value == value1:
                                 print(value1)
                                 XL = True
