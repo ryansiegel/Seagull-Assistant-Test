@@ -52,7 +52,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         maxRank += 5
     embedVar = discord.Embed(title="PvPoke | " + meta + " - Ranks 1 to 5", description="", color=0x000000)
     for prefix, event, value in parser:
-        if minRank <= maxRank:
+        if minRank <= count and count <= maxRank:
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper()
                 for prefix1, event1, value1 in parser1:
