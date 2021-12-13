@@ -99,20 +99,20 @@ async def rankList(inter, channelPrint, meta, ranks):
                         for item in file:
                             print("-" + item.replace("\n","") + "-" + fastmove + "-")
                             if item.replace("\n","") == chargemove[0]:
-                                chargemove[0] = "<:water-1:919749820795732058>" + chargemove[0]
+                                chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
                             if item.replace("\n","") == chargemove[1]:
-                                chargemove[1] = "<:water-1:919749820795732058>" + chargemove[1]
+                                chargemove[1] = "<:water:919749820795732058>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
-                                fastmove = "<:water-1:919749820795732058>" + fastmove
+                                fastmove = "<:water:919749820795732058>" + fastmove
                     with open('bot/pvpoke/movesets/ice') as file:
                         for item in file:
                             print("-" + item.replace("\n","") + "-" + fastmove + "-")
                             if item.replace("\n","") == chargemove[0]:
-                                chargemove[0] = "<:ice-1:919749820741214288>" + chargemove[0]
+                                chargemove[0] = "<:ice:919749820741214288>" + chargemove[0]
                             if item.replace("\n","") == chargemove[1]:
-                                chargemove[1] = "<:ice-1:919749820741214288>" + chargemove[1]
+                                chargemove[1] = "<:ice:919749820741214288>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
-                                fastmove = "<:ice-1:919749820741214288>" + fastmove
+                                fastmove = "<:ice:919749820741214288>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
