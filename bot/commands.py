@@ -78,7 +78,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                             if event1 == 'end_map':    
                                 count1 += 1
             elif prefix.endswith('.matchups.item.opponent'):
-                matchoppt.append(str(value).title().replace("_"," "))
+                matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)"))
             elif prefix.endswith('.matchups.item.rating'):
                 matchrate.append(str(value))
             elif prefix.endswith('.counters.item.opponent'):
@@ -95,7 +95,15 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 fastmove = "<:water:919749820795732058>" + fastmove
                     count2 += 1
                 elif count2 == 1 or count2 == 2:
-                    chargemove.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)"))
+                    chargemove.append(str(value).title().replace("_"," "))
+                    with open('bot/pvpoke/movesets/water') as file:
+                        for item in file:
+                            if item == chargemove[0]:
+                                print('test')
+                                chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
+                            elif item == chargemove[1]:
+                                print('test')
+                                chargemove[1] = "<:water:919749820795732058>" + chargemove[1]
                     count2 += 1
             elif prefix == 'item':
                 if event == 'end_map':
