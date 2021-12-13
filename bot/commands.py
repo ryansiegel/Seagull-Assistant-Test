@@ -97,13 +97,13 @@ async def rankList(inter, channelPrint, meta, ranks):
                     #add emoji on
                     with open('bot/pvpoke/movesets/water') as file:
                         for item in file:
-                            if str(item).strip() is chargemove[0]:
+                            if str(item).rstrip('\n') is chargemove[0]:
                                 print('test')
                                 chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
-                            if str(item).strip() is chargemove[1]:
+                            if str(item).rstrip('\n') is chargemove[1]:
                                 print('test')
                                 chargemove[1] = "<:water:919749820795732058>" + chargemove[1]
-                            if str(item).strip() is fastmove:
+                            if str(item).rstrip('\n') is fastmove:
                                 fastmove = "<:water:919749820795732058>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
