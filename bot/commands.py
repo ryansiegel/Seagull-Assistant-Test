@@ -119,6 +119,14 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 chargemove[1] = "<:ground:919750721442832395>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:ground:919750721442832395>" + fastmove
+                    with open('bot/pvpoke/movesets/rock') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:rock:919750721434451998>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:rock:919750721434451998>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:rock:919750721434451998>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL) ««««",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
@@ -135,7 +143,7 @@ async def rankList(inter, channelPrint, meta, ranks):
         if prefix == 'item':
             if event == 'end_map':
                 count += 1
-    embedVar.set_footer(text="All data has been provided from www.pvpoke.com | www.seagullsbot.com",icon_url = "https://pbs.twimg.com/profile_images/1085243290671304704/3XyaT2qY_400x400.png")
+    embedVar.set_footer(text="www.pvpoke.com | www.seagullsbot.com",icon_url = "https://pbs.twimg.com/profile_images/1085243290671304704/3XyaT2qY_400x400.png")
     embedVar.set_thumbnail(url=thumb)
     await inter.reply(embed=embedVar)
     await channelPrint.send('PvPoke Ranks - ' + str(inter.guild.name) + ' - ' + str(inter.author) + '.')
