@@ -113,6 +113,15 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 chargemove[1] = "<:ice:919749820741214288>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:ice:919749820741214288>" + fastmove
+                    with open('bot/pvpoke/movesets/ground') as file:
+                        for item in file:
+                            print("-" + item.replace("\n","") + "-" + fastmove + "-")
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:ground:919750721442832395>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:ground:919750721442832395>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:ground:919750721442832395>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
