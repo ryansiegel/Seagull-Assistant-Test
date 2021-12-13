@@ -123,11 +123,11 @@ async def rankList(inter, channelPrint, meta, ranks):
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:ground:919750721442832395>" + fastmove
                     if XL == True:
-                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL) ««««",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
+                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL) ««««",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
-                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " ««««",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
-                    embedVar.add_field(name="Key Wins>>",value=matchoppt[0] + " [RATING: " + matchrate[0] + "]\n" + matchoppt[1] + " [RATING: " + matchrate[1] + "]\n" + matchoppt[2] + " [RATING: " + matchrate[2] + "]\n" + matchoppt[3] + " [RATING: " + matchrate[3] +  "]\n" + matchoppt[4] + " [RATING: " + matchrate[4] + "]", inline=True)
-                    embedVar.add_field(name="Key Losses>>",value=countoppt[0] + " [RATING: " + countrate[0] + "]\n" + countoppt[1] + " [RATING: " + countrate[1] + "]\n" + countoppt[2] + " [RATING: " + countrate[2] + "]\n" + countoppt[3] + " [RATING: " + countrate[3] +  "]\n" + countoppt[4] + " [RATING: " + countrate[4] + "]", inline=True)
+                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " ««««",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
+                    embedVar.add_field(name="Key Wins>>",value=matchoppt[0] + " *[RATING: " + matchrate[0] + "]*\n" + matchoppt[1] + " *[" + matchrate[1] + "]*\n" + matchoppt[2] + " *[" + matchrate[2] + "]*\n" + matchoppt[3] + " *[" + matchrate[3] +  "]*\n" + matchoppt[4] + " *[" + matchrate[4] + "]*", inline=True)
+                    embedVar.add_field(name="Key Losses>>",value=countoppt[0] + " *[RATING: " + countrate[0] + "]*\n" + countoppt[1] + " *[" + countrate[1] + "]*\n" + countoppt[2] + " *[" + countrate[2] + "]*\n" + countoppt[3] + " *[" + countrate[3] +  "]*\n" + countoppt[4] + " *[" + countrate[4] + "]*", inline=True)
                     matchoppt.clear()
                     matchrate.clear()
                     countoppt.clear()
