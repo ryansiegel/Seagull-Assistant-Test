@@ -97,7 +97,6 @@ async def rankList(inter, channelPrint, meta, ranks):
                     #add emoji on
                     with open('bot/pvpoke/movesets/water') as file:
                         for item in file:
-                            print("-" + item.replace("\n","") + "-" + fastmove + "-")
                             if item.replace("\n","") == chargemove[0]:
                                 chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
                             if item.replace("\n","") == chargemove[1]:
@@ -106,7 +105,6 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 fastmove = "<:water:919749820795732058>" + fastmove
                     with open('bot/pvpoke/movesets/ice') as file:
                         for item in file:
-                            print("-" + item.replace("\n","") + "-" + fastmove + "-")
                             if item.replace("\n","") == chargemove[0]:
                                 chargemove[0] = "<:ice:919749820741214288>" + chargemove[0]
                             if item.replace("\n","") == chargemove[1]:
@@ -115,7 +113,6 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 fastmove = "<:ice:919749820741214288>" + fastmove
                     with open('bot/pvpoke/movesets/ground') as file:
                         for item in file:
-                            print("-" + item.replace("\n","") + "-" + fastmove + "-")
                             if item.replace("\n","") == chargemove[0]:
                                 chargemove[0] = "<:ground:919750721442832395>" + chargemove[0]
                             if item.replace("\n","") == chargemove[1]:
