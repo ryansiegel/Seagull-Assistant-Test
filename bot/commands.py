@@ -88,25 +88,23 @@ async def rankList(inter, channelPrint, meta, ranks):
             elif prefix.endswith('item.moveset.item'):
                 if count2 == 0:
                     fastmove = str(value).title().replace("_"," ")
-                    with open('bot/pvpoke/movesets/water') as file:
-                        for item in file:
-                            if item == fastmove:
-                                print('test')
-                                fastmove = "<:water:919749820795732058>" + fastmove
                     count2 += 1
                 elif count2 == 1 or count2 == 2:
                     chargemove.append(str(value).title().replace("_"," "))
+                    count2 += 1
+            elif prefix == 'item':
+                if event == 'end_map':
+                    #add emoji on
                     with open('bot/pvpoke/movesets/water') as file:
                         for item in file:
                             if item == chargemove[0]:
                                 print('test')
                                 chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
-                            elif item == chargemove[1]:
+                            if item == chargemove[1]:
                                 print('test')
                                 chargemove[1] = "<:water:919749820795732058>" + chargemove[1]
-                    count2 += 1
-            elif prefix == 'item':
-                if event == 'end_map':
+                            if item == fastmove:
+                                fastmove = "<:water:919749820795732058>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="》#" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset-** " + fastmove + " | " + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
