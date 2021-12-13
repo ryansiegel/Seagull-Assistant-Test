@@ -88,11 +88,10 @@ async def rankList(inter, channelPrint, meta, ranks):
             elif prefix.endswith('item.moveset.item'):
                 if count2 == 0:
                     fastmove = str(value).title().replace("_"," ")
-                    print(fastmove)
                     with open('bot/pvpoke/movesets/water') as file:
                         for item in file:
-                            print(item)
                             if item == fastmove:
+                                print('test')
                                 fastmove = "<:water:919749820795732058>" + fastmove
                     count2 += 1
                 elif count2 == 1 or count2 == 2:
