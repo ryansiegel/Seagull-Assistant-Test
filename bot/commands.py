@@ -78,11 +78,11 @@ async def rankList(inter, channelPrint, meta, ranks):
                             if event1 == 'end_map':    
                                 count1 += 1
             elif prefix.endswith('.matchups.item.opponent'):
-                matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)"))
+                matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)").replace(" Galarian"," (Galarian)"))
             elif prefix.endswith('.matchups.item.rating'):
                 matchrate.append(str(value))
             elif prefix.endswith('.counters.item.opponent'):
-                countoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)"))
+                countoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)").replace(" Galarian"," (Galarian)"))
             elif prefix.endswith('.counters.item.rating'):
                 countrate.append(str(value))
             elif prefix.endswith('item.moveset.item'):
