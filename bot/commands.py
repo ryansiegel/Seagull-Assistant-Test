@@ -97,7 +97,7 @@ async def rankList(inter, channelPrint, meta, ranks):
                     #add emoji on
                     with open('bot/pvpoke/movesets/water') as file:
                         for item in file:
-                            print('\n'.join(difflib.ndiff([item], [fastmove])))
+                            print(item + "-" + fastmove + "-")
                             if item is chargemove[0]:
                                 print('test')
                                 chargemove[0] = "<:water:919749820795732058>" + chargemove[0]
