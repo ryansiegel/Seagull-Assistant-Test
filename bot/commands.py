@@ -246,6 +246,22 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 chargemove[1] = "<:ele:919750721598021682>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:ele:919750721598021682>" + fastmove
+                    with open('bot/pvpoke/movesets/normal') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:normal:919750721635745852>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:normal:919750721635745852>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:normal:919750721635745852>" + fastmove
+                    with open('bot/pvpoke/movesets/poison') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:poison:919750721648332810>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:poison:919750721648332810>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:poison:919750721648332810>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " *(XL)*",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
