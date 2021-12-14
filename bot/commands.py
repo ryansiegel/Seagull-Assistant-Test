@@ -49,6 +49,16 @@ async def rankList(inter, channelPrint, meta, ranks):
         parser = ijson.parse(open("bot/pvpoke/glremix-rankings-1500.json"))
         thumb = "https://silph.gg/img/badges/great-league.png"
         listXL = ["Diggersby", "Lickitung", "Pachirisu", "Wobbuffet", "Grimer (Alolan)", "Wormadam (Trash)", "Chansey", "Sandshrew (Alolan)"]
+    elif meta == "Ultra":
+        meta1 = "Ultra League"
+        parser = ijson.parse(open("bot/pvpoke/ul-rankings-2500.json"))
+        thumb = "https://silph.gg/img/badges/ultra-league.png"
+        listXL = []
+    elif meta == "Remix Ultra":
+        meta1 = "Ultra League Remix"
+        parser = ijson.parse(open("bot/pvpoke/ulremix-rankings-2500.json"))
+        thumb = "https://silph.gg/img/badges/ultra-league.png"
+        listXL = []
     elif meta == "Glacial":
         meta1 = "Glacial Cup"
         parser = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
