@@ -157,6 +157,22 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 chargemove[1] = "<:ghost:919750721660923934>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:ghost:919750721660923934>" + fastmove
+                    with open('bot/pvpoke/movesets/fighting') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:fight:919750721627365417>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:fight:919750721627365417>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:fight:919750721627365417>" + fastmove
+                    with open('bot/pvpoke/movesets/dragon') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:dragon:919750721635758100>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:dragon:919750721635758100>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:dragon:919750721635758100>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL) *[type 1] [type 2]*",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
