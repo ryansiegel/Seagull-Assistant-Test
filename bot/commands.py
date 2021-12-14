@@ -222,6 +222,30 @@ async def rankList(inter, channelPrint, meta, ranks):
                                 chargemove[1] = "<:psychic:919750721488965712>" + chargemove[1]
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:psychic:919750721488965712>" + fastmove
+                    with open('bot/pvpoke/movesets/dark') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:dark:919750721648328714>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:dark:919750721648328714>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:dark:919750721648328714>" + fastmove
+                    with open('bot/pvpoke/movesets/flying') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:fly:919750721652527175>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:fly:919750721652527175>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:fly:919750721652527175>" + fastmove
+                    with open('bot/pvpoke/movesets/electric') as file:
+                        for item in file:
+                            if item.replace("\n","") == chargemove[0]:
+                                chargemove[0] = "<:ele:919750721598021682>" + chargemove[0]
+                            if item.replace("\n","") == chargemove[1]:
+                                chargemove[1] = "<:ele:919750721598021682>" + chargemove[1]
+                            if item.replace("\n","") == fastmove:
+                                fastmove = "<:ele:919750721598021682>" + fastmove
                     if XL == True:
                         embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " *(XL)*",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
