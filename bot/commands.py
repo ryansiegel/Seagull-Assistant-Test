@@ -95,11 +95,11 @@ async def rankList(inter, channelPrint, meta, ranks):
                 with open('bot/pvpoke/pokemon/water') as file:
                     for item in file:
                         if item.replace("\n","") == value:
-                            pokemon = pokemon + "<:water:919749389348651009>"
+                            pokemon = pokemon + "<:water:919749820795732058>"
                 with open('bot/pvpoke/pokemon/fairy') as file:
                     for item in file:
                         if item.replace("\n","") == value:
-                            pokemon = pokemon + "<:fairy:919749389390585856>"
+                            pokemon = pokemon + "<:fairy:919750721614786630>"
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)").replace(" Galarian"," (Galarian)"))
             elif prefix.endswith('.matchups.item.rating'):
