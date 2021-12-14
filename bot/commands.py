@@ -91,6 +91,15 @@ async def rankList(inter, channelPrint, meta, ranks):
                         if prefix1 == 'item':
                             if event1 == 'end_map':    
                                 count1 += 1
+                #add emoji on
+                with open('bot/pvpoke/pokemon/water') as file:
+                    for item in file:
+                        if item.replace("\n","") == value:
+                            pokemon = pokemon + "<:water:919749389348651009>"
+                with open('bot/pvpoke/pokemon/fairy') as file:
+                    for item in file:
+                        if item.replace("\n","") == value:
+                            pokemon = pokemon + "<:fairy:919749389390585856>"
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)").replace(" Galarian"," (Galarian)"))
             elif prefix.endswith('.matchups.item.rating'):
@@ -174,9 +183,9 @@ async def rankList(inter, channelPrint, meta, ranks):
                             if item.replace("\n","") == fastmove:
                                 fastmove = "<:dragon:919750721635758100>" + fastmove
                     if XL == True:
-                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL) *[type 1] [type 2]*",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
+                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " (XL)",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     else:
-                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon + " *[type 1] [type 2]*",value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
+                        embedVar.add_field(name="»»»» #" + str(count) + ": " + pokemon,value="**Suggested Moveset>>**\n" + fastmove + "\n" + chargemove[0] + " & " + chargemove[1], inline=False)
                     embedVar.add_field(name="Key Wins>>",value=matchoppt[0] + " *[" + matchrate[0] + "]*\n" + matchoppt[1] + " *[" + matchrate[1] + "]*\n" + matchoppt[2] + " *[" + matchrate[2] + "]*\n" + matchoppt[3] + " *[" + matchrate[3] +  "]*\n" + matchoppt[4] + " *[" + matchrate[4] + "]*", inline=True)
                     embedVar.add_field(name="Key Losses>>",value=countoppt[0] + " *[" + countrate[0] + "]*\n" + countoppt[1] + " *[" + countrate[1] + "]*\n" + countoppt[2] + " *[" + countrate[2] + "]*\n" + countoppt[3] + " *[" + countrate[3] +  "]*\n" + countoppt[4] + " *[" + countrate[4] + "]*", inline=True)
                     matchoppt.clear()
