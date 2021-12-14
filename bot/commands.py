@@ -69,7 +69,6 @@ async def rankList(inter, channelPrint, meta, ranks):
         if (ranks-4) <= count and count <= ranks:
             if prefix.endswith('.speciesName'):
                 pokemon = str(value).upper() + " "
-                print(value)
                 for poke in listXL:
                     if poke == value:
                         XL = True
@@ -95,11 +94,11 @@ async def rankList(inter, channelPrint, meta, ranks):
                 #add emoji on
                 with open('bot/pvpoke/pokemon/water') as file:
                     for item in file:
-                        if item.replace("\n","") == value.replace(" Shadow)", ""):
+                        if item.replace("\n","") == value.replace(" (Shadow)", ""):
                             pokemon = pokemon + "<:water:919749820795732058>"
                 with open('bot/pvpoke/pokemon/fairy') as file:
                     for item in file:
-                        if item.replace("\n","") == value.replace(" Shadow)", ""):
+                        if item.replace("\n","") == value.replace(" (Shadow)", ""):
                             pokemon = pokemon + "<:fairy:919750721614786630>"
             elif prefix.endswith('.matchups.item.opponent'):
                 matchoppt.append(str(value).title().replace("_"," ").replace(" Shadow"," (Shadow)").replace(" Alolan"," (Alolan)").replace(" Galarian"," (Galarian)"))
