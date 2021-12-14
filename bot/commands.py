@@ -77,6 +77,10 @@ async def rankList(inter, channelPrint, meta, ranks):
                         parser1 = ijson.parse(open("bot/pvpoke/gl-rankings-1500.json"))
                     elif meta == "Remix Great":
                         parser1 = ijson.parse(open("bot/pvpoke/glremix-rankings-1500.json"))
+                    elif meta == "Ultra":
+                        parser1 = ijson.parse(open("bot/pvpoke/ul-rankings-2500.json"))
+                    elif meta == "Remix Ultra":
+                        parser1 = ijson.parse(open("bot/pvpoke/ulremix-rankings-2500.json"))
                     elif meta == "Glacial":
                         parser1 = ijson.parse(open("bot/pvpoke/glacial-rankings-1500.json"))
                     for prefix1, event1, value1 in parser1:
